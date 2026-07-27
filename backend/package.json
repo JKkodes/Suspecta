@@ -1,7 +1,7 @@
 {
-  "name": "scamlens-backend",
+  "name": "Suspecta-backend",
   "version": "1.0.0",
-  "description": "ScamLens backend - AI-powered scam detection API (conversation + URL checker)",
+  "description": "Suspecta backend - AI-powered scam detection API (conversation + URL checker)",
   "type": "module",
   "main": "src/server.js",
   "scripts": {
