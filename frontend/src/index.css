@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-navy text-cream font-body antialiased;
+  background-image: radial-gradient(circle at 20% 20%, rgba(241, 233, 220, 0.04) 0, transparent 45%),
+    radial-gradient(circle at 80% 60%, rgba(179, 58, 58, 0.06) 0, transparent 50%);
+  background-attachment: fixed;
+}
+
+.stamp {
+  font-family: "Special Elite", "Courier New", monospace;
+  letter-spacing: 0.08em;
+}
+
+.case-label {
+  font-family: "IBM Plex Mono", monospace;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+::selection {
+  background: theme("colors.brick.DEFAULT");
+  color: theme("colors.cream.DEFAULT");
+}
+
+*:focus-visible {
+  outline: 2px solid theme("colors.brick.light");
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
