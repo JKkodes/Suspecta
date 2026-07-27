@@ -6,7 +6,7 @@
 
 ## 🌐 Live Demo
 
-🔗 **Live Application:** https://YOUR-VERCEL-URL.vercel.app
+🔗 **Live Application:***[Launch Suspecta](https://jkkodes.github.io/Suspecta/)**
 
 ---
 
