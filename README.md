@@ -1,145 +1,303 @@
-# ScamLens
+# 🛡️ Suspecta
 
-AI-powered scam detection for online marketplace buyers (OLX, Facebook Marketplace, Daraz, Instagram/WhatsApp/Telegram sellers, and similar). Paste a conversation or a listing link and get a plain-English risk report before you pay.
-
-Two features, per the spec:
-
-1. **Conversation Checker** — paste a full buyer/seller chat, get a risk score (0–100), detected red flags, a plain-English explanation, safety recommendations, and questions to ask the seller.
-2. **URL Safety Checker** — paste a website/listing link (optionally with a product name), get a trust score across website safety, seller trust, review quality, pricing, and security.
-
-Both are powered by Groq (`llama-3.3-70b-versatile` by default), with a small internal, **generalized** knowledge base of real reported scam patterns used as reference signals — never pattern-matched verbatim, per the product's own design rule.
+> **AI-powered scam detection platform that helps users identify fraudulent websites and suspicious online conversations before they become victims.**
 
 ---
 
-## Project structure
+## 🌐 Live Demo
 
-```
-scamlens/
-├── backend/                 Node.js + Express API
-│   ├── src/
-│   │   ├── server.js         App entry point
-│   │   ├── config/env.js     Environment config
-│   │   ├── routes/           /api/conversation, /api/url
-│   │   ├── controllers/      Request handling
-│   │   ├── services/         Groq client, prompts, knowledge base, web search
-│   │   └── middleware/       Rate limiting, validation, error handling
-│   ├── tests/                node --test unit tests
-│   └── .env.example
-└── frontend/                 React + TypeScript + Vite + Tailwind
-    ├── src/
-    │   ├── pages/             Home, ConversationChecker, UrlChecker, About
-    │   ├── components/        Navbar, Footer, LoadingState, ReportDisplay
-    │   ├── lib/api.ts          Backend API client
-    │   └── types.ts           Shared TypeScript types
-    └── .env.example
-```
+🔗 **Live Application:** https://YOUR-VERCEL-URL.vercel.app
 
-## Setup
+---
 
-### 1. Backend
+# 📖 Overview
+
+Suspecta is an AI-powered cybersecurity platform designed to help users make safer online decisions. It analyzes websites and marketplace conversations to identify potential scam indicators, evaluate trustworthiness, and generate easy-to-understand risk reports.
+
+The project was inspired by a real online marketplace scam experience, where fake trust signals such as identity documents and pressure tactics were used to deceive buyers. Suspecta was built to help users recognize these warning signs before they lose money or share sensitive information.
+
+---
+
+# 🎯 Problem Statement
+
+Online scams are becoming increasingly sophisticated. Many users struggle to determine whether a website, online seller, or conversation is trustworthy.
+
+Common scams include:
+
+- Fake online stores
+- Marketplace scams
+- Advance payment fraud
+- Social engineering
+- Phishing attempts
+- Fake identities
+- Artificial urgency tactics
+
+Most users only realize they have been scammed after sending money.
+
+Suspecta helps users detect these warning signs before making a decision.
+
+---
+
+# 👥 Target Users
+
+- Online shoppers
+- Marketplace buyers and sellers
+- Students
+- General internet users
+- Small businesses
+- Anyone unsure whether an online interaction is trustworthy
+
+---
+
+# ✨ Features
+
+## 💬 AI Conversation Analyzer
+
+Paste any marketplace or online conversation.
+
+The AI analyzes:
+
+- Advance payment requests
+- Urgency tactics
+- Identity manipulation
+- Requests to move off-platform
+- Pressure techniques
+- Verification refusal
+- Trust-building manipulation
+- Scam probability
+
+The report includes:
+
+- Risk Score (0–100)
+- Confidence Score
+- Executive Summary
+- Scam Patterns Detected
+- Evidence-Based Findings
+- Personalized Safety Recommendations
+- Timeline of suspicious events
+
+---
+
+## 🌍 Website Trust Analyzer
+
+Enter any website URL.
+
+The analyzer evaluates:
+
+- HTTPS security
+- SSL configuration
+- Business transparency
+- Contact information
+- Privacy Policy
+- Terms of Service
+- Refund policy
+- Trust indicators
+- Security headers
+- Domain reputation
+- Website credibility
+
+The report includes:
+
+- Trust Score
+- Security Score
+- Business Transparency
+- Positive Trust Signals
+- Potential Risk Indicators
+- Evidence Summary
+- Personalized Recommended Actions
+
+---
+
+## 📊 AI Risk Reports
+
+Every analysis generates a structured report containing:
+
+- Executive Summary
+- Confidence Level
+- Risk Breakdown
+- Evidence
+- Recommendations
+- Final Verdict
+
+---
+
+## 🎨 Modern User Interface
+
+- Responsive design
+- Clean dashboard
+- Dark mode interface
+- Interactive score indicators
+- Easy-to-read reports
+
+---
+
+# 🤖 AI Feature
+
+Suspecta uses Large Language Models (LLMs) to analyze conversations and websites for scam indicators.
+
+Instead of simply labeling something as "safe" or "unsafe", the AI explains:
+
+- Why it reached its conclusion
+- Which evidence supports the decision
+- Which scam techniques were detected
+- What users should do next
+
+---
+
+# 🧠 System Prompt
+
+The AI was instructed with a custom prompt specifically designed for fraud detection.
+
+### Conversation Analysis
+
+> You are an expert cybersecurity and fraud detection assistant. Analyze marketplace and online conversations for scam indicators including advance payment requests, pressure tactics, social engineering, identity manipulation, requests to move communication off-platform, refusal to verify claims, and suspicious payment methods. Generate an evidence-based report with a risk score, confidence score, detected patterns, explanations, and personalized safety recommendations.
+
+### Website Analysis
+
+> You are an expert website trust evaluator. Assess websites using technical security signals, business transparency, payment safety, trust indicators, public reputation, and consumer protection best practices. Produce a balanced report with trust scores, evidence, risk indicators, and actionable recommendations. Never assume a website is fraudulent without supporting evidence.
+
+---
+
+# 🛠 Technologies Used
+
+## Frontend
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+
+## AI
+
+- OpenAI GPT
+  *(Replace with Gemini or whichever model you actually used.)*
+
+## Deployment
+
+- Vercel
+
+## Version Control
+
+- Git
+- GitHub
+
+---
+
+# 📸 Screenshots
+
+## Home Page
+
+*(Insert Screenshot)*
+
+---
+
+## Conversation Analysis
+
+*(Insert Screenshot)*
+
+---
+
+## Website Analysis
+
+*(Insert Screenshot)*
+
+---
+
+## AI Report
+
+*(Insert Screenshot)*
+
+---
+
+# 🚀 How to Run Locally
+
+Clone the repository
 
 ```bash
-cd backend
-cp .env.example .env
+git clone https://github.com/JKkodes/Suspecta.git
 ```
 
-Edit `.env` and add your Groq API key (free at [console.groq.com](https://console.groq.com)):
+Navigate into the project
 
-```
-GROQ_API_KEY=your_key_here
+```bash
+cd Suspecta
 ```
 
-Then install and run:
+Install dependencies
 
 ```bash
 npm install
-npm run dev        # http://localhost:5000
 ```
 
-`WEB_SEARCH_API_KEY` in `.env` is optional — it enables live web context for the URL checker via [Tavily](https://tavily.com)'s free tier. Leave it blank and the URL checker still works, just relying on the model's own knowledge instead of a fresh web lookup.
+Create a `.env` file
 
-### 2. Frontend
+```env
+OPENAI_API_KEY=YOUR_API_KEY
+```
 
-In a second terminal:
+*(Replace with the environment variables your project actually uses.)*
+
+Start the development server
 
 ```bash
-cd frontend
-cp .env.example .env
-npm install
-npm run dev        # http://localhost:5173
+npm run dev
 ```
 
-`VITE_API_BASE_URL` in the frontend `.env` should point at your running backend (defaults to `http://localhost:5000`).
+Open
 
-Open `http://localhost:5173` and you're in.
+```
+http://localhost:5173
+```
 
 ---
 
-## API reference
+# 📂 Project Structure
 
-### `POST /api/conversation/analyze`
-
-```json
-{ "conversation": "Seller: Hi, item is available...\nBuyer: Can I see it in person?..." }
 ```
-
-Returns:
-
-```json
-{
-  "error": false,
-  "report": {
-    "riskScore": 83,
-    "riskLabel": "High Risk",
-    "confidence": 91,
-    "currencyDetected": "Rs",
-    "redFlags": [{ "flag": "Advance payment requested", "severity": "high" }],
-    "explanation": "...",
-    "recommendations": ["Do NOT send an advance payment.", "..."],
-    "suggestedQuestions": ["Can we meet in person?", "..."],
-    "disclaimer": "This report is an advisory risk assessment..."
-  }
-}
+Suspecta
+│
+├── frontend
+│   ├── src
+│   ├── components
+│   ├── pages
+│   ├── lib
+│   └── assets
+│
+├── README.md
+└── ...
 ```
-
-### `POST /api/url/analyze`
-
-```json
-{ "url": "https://example.com/listing/123", "productName": "iPhone 15 Pro" }
-```
-
-Returns:
-
-```json
-{
-  "error": false,
-  "report": {
-    "overallTrustScore": 61,
-    "recommendation": "Proceed Carefully",
-    "categories": {
-      "websiteSafety": 70,
-      "sellerTrust": 55,
-      "reviewQuality": 40,
-      "pricingSuspicion": "Suspicious",
-      "security": 65
-    },
-    "findings": ["..."],
-    "explanation": "...",
-    "disclaimer": "This report is an advisory assessment..."
-  }
-}
-```
-
-Both endpoints return `{ "error": true, "message": "..." }` with a 4xx/5xx status on failure (bad input, missing API key, Groq error, etc.) — the frontend surfaces `message` directly.
 
 ---
 
-## Notes on scope
+# 💡 Future Improvements
 
-Built per the PRD: two features only (conversation + URL checker), no image scam detection, no browser extension, no mobile app, no community reporting — those are explicitly future work, not part of this build.
+- Browser extension
+- QR code scam detection
+- Email phishing analyzer
+- SMS scam detection
+- Image-based scam detection
+- User reporting system
+- Community trust database
+- Multi-language support
 
-Not included in this scaffold, since they need real infrastructure decisions from you: a database layer (PRD mentions SQLite/Postgres for optional opt-in storage — the current build stores nothing, statelessly, which satisfies the privacy requirement without needing a DB), and production deployment config for Vercel/Render/Railway (the code is deployment-ready, but hosting setup is environment-specific).
+---
 
-## Currency handling
+# ⚠ Disclaimer
 
-Per your instruction, the AI is explicitly told to preserve whatever currency appears in the conversation or listing (Rs, PKR, $, etc.) rather than assuming or converting to USD — see `currencyDetected` in the conversation report.
+Suspecta provides AI-generated risk assessments for educational and decision-support purposes. While the system identifies many common scam indicators, it should not be considered legal or financial advice. Users should independently verify information before making important decisions.
+
+---
+
+# 👩‍💻 Author
+
+**Javeria Khan**
+
+Computer Science Student
+
+GitHub: https://github.com/JKkodes
+
+---
+
+# ⭐ Why Suspecta?
+
+Suspecta goes beyond simply assigning a trust score. It explains *why* a website or conversation may be risky, highlights supporting evidence, and provides actionable recommendations that empower users to make safer online decisions.
