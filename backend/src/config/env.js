@@ -11,7 +11,7 @@ export const env = {
 
 if (!env.groqApiKey) {
   console.warn(
-    "[ScamLens] WARNING: GROQ_API_KEY is not set. Copy .env.example to .env and add your key, " +
+    "[Suspecta] WARNING: GROQ_API_KEY is not set. Copy .env.example to .env and add your key, " +
       "or requests to /api/conversation/analyze and /api/url/analyze will fail."
   );
 }
